@@ -1,0 +1,25 @@
+name: test github action  pipeline
+
+on: 
+  push:
+    branches:
+      - main
+      - feature-test
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: practice pipeline
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: checkoutrepo
+        uses: actions/checkout@v4
+
+      - name: samplescript
+        run: |
+          echo "runner $(hostname)"
+          echo "This is a practice test"
+          
